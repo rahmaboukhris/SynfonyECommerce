@@ -1,0 +1,3 @@
+sil14_vitrine_homepage:
+    path:     /
+    defaults: { _controller: sil14VitrineBundle:Default:index }
