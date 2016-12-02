@@ -32,4 +32,12 @@ class DefaultController extends Controller
 
         return $this->render('sil14VitrineBundle:Default:articlesParCategorie.html.twig', array('articles' => $articles,'categorie' => $categorie));
     }
+
+    public function getCategorieAction(){
+        $categorie = $this->getDoctrine()->getManager()->getRepository('sil14VitrineBundle:Categorie')->findAll();
+
+        return $this->render('sil14VitrineBundle:Default:categorieList.html.twig',array('listCate' => $categorie));
+
+
+    }
 }

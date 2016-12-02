@@ -20,16 +20,39 @@ class PanierController extends Controller
 
     public function ajoutArticleAction(Request $request,$id,$qte){
 
-        $p = $this->getPanier($request);
+        $panier = $this->getPanier($request);
 
-        $p->ajoutArticle($id,$qte);
+        //$article=$this->getArticle($id);
 
-        $request->getSession()->set('panier',$p);
+        $panier->ajoutArticle($id,$qte);
+
+        $request->getSession()->set('panier',$panier);
 
 
         $response = $this->forward('sil14VitrineBundle:Panier:contenuPanier');
 
         return $response;
+
+    }
+
+    public function viderPanierAction(Request $request){
+
+        $panier = $this->getPanier($request);
+
+        $panier->viderPanier();
+
+        $request->getSession()->set('panier',$panier);
+
+        $response = $this->forward('sil14VitrineBundle:Panier:contenuPanier');
+
+        return $response;
+    }
+
+    public function panierLayoutAction(Request $request){
+
+        $panier=$this->getPanier($request);
+
+        return $this->render('@sil14Vitrine/Default/panierLayout.html.twig',array('panier' => $panier));
 
     }
 
@@ -44,6 +67,19 @@ class PanierController extends Controller
         $panier = $session->get('panier',new Panier());
 
         return $panier;
+    }
+
+    /***
+     * @param $id
+     * @return object|\sil14\VitrineBundle\Entity\Article
+     */
+
+    private function getArticle($id){
+
+        $article = $this->getDoctrine()->getManager()->getRepository('sil14VitrineBundle:Article')->find($id);
+
+        return $article;
+
     }
 
 

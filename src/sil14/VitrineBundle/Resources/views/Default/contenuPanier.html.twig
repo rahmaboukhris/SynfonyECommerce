@@ -4,10 +4,13 @@
     Bienvenue sur le site de e-commerce !
 
     <ul>
-    {% for article in panier.contenu %}
-        <li> {{ article }} </li>
+    {% for key,quantite in panier.contenu %}
+        <li> {{ key }}: {{ quantite }} </li>
     {% endfor %}
     </ul>
+
+
+    <a href="{{ path('sil14_vitrine_viderPanier') }}">Vider le panier</a>
 
 
 {% endblock %}

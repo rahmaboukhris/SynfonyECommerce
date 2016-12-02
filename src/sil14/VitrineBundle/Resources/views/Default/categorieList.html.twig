@@ -1,0 +1,6 @@
+{% for cat in listCate %}
+
+    <li><a href="{{ path('sil14_vitrine_articleParCategorie', {'id' : cat.id}) }}">{{ cat.intitule }}</a> </li>
+
+
+{% endfor %}

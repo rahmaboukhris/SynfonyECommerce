@@ -21,6 +21,10 @@ sil14\VitrineBundle\Entity\Article:
                 stock :
                         type: integer
 
+                img :
+                        type: string
+                        lenght: 100
+
         manyToOne:
                 categorie:
                         targetEntity: Categorie

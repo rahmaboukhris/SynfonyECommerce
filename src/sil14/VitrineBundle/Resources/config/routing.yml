@@ -20,7 +20,11 @@ sil14_vitrine_contenuPanier:
 
 sil14_vitrine_ajoutArticle:
     path:     /ajoutArticle/{id}/{qte}
-    defaults: { _controller: sil14VitrineBundle:Panier:ajoutArticle, id: 1, qte: 1 }
+    defaults: { _controller: sil14VitrineBundle:Panier:ajoutArticle, id: 0, qte: 1 }
+
+sil14_vitrine_viderPanier:
+    path:     /viderPanier
+    defaults: { _controller: sil14VitrineBundle:Panier:viderPanier }
 
 
 

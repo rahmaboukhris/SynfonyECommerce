@@ -35,6 +35,11 @@ class Article
     private $stock;
 
     /**
+     * @var string
+     */
+    private $img;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $ligneArticles;
@@ -208,5 +213,28 @@ class Article
     public function getCategorie()
     {
         return $this->categorie;
+    }
+
+    /**
+     * Set img
+     *
+     * @param string $img
+     * @return Article
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * Get img
+     *
+     * @return string 
+     */
+    public function getImg()
+    {
+        return $this->img;
     }
 }

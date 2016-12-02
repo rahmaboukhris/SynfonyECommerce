@@ -3,28 +3,59 @@
 <link rel="stylesheet" href="{{ asset('bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="{{ asset('bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
 {% block navbar %}
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
             </div>
-            <ul class="nav navbar-nav">
-                <li><a href="{{ path('sil14_vitrine_homepage') }}">Accueil</a></li>
-                <li><a href="{{ path('sil14_vitrine_mentionslegales') }}">Mentions légales</a></li>
-                <li><a href="{{ path('sil14_vitrine_catalogue') }}">Catalogue</a></li>
-                <li><a href="{{ path('sil14_vitrine_articleParCategorie') }}">Article par catégorie</a></li>
-            </ul>
-        </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('sil14_vitrine_homepage') }}">Accueil</a></li>
+                    <li><a href="{{ path('sil14_vitrine_mentionslegales') }}">Mentions légales</a></li>
+                    <li><a href="{{ path('sil14_vitrine_catalogue') }}">Catalogue</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégorie <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {{ render(controller('sil14VitrineBundle:Default:getCategorie')) }}
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
     </nav>
 
 {% endblock%}
 
 <div class="symfony-content">
-    {% block content %}
-    {% endblock%}
+
+    <div class="row">
+        <div class="col-lg-2">3 colonnes</div>
+        <div class="col-lg-7 col-lg-offset-1">
+            {% block content %}
+            {% endblock%}
+        </div>
+        <div class="col-lg-2">{{ render(controller('sil14VitrineBundle:Panier:panierLayout')) }}</div>
+    </div>
+
 </div>
 
 

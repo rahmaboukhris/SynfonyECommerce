@@ -1,11 +1,19 @@
 {% extends"layout.html.twig" %}
 
 {% block content %}
-    Voici toutes les articles de la catégorie {{ categorie }} :
+    <h2 style="text-align: center">Voici toutes les articles de la catégorie {{ categorie }} :</h2>
 
     {% for article in articles %}
 
-        <div>{{ article.name }} <a class="btn btn-default" href="{{ path('sil14_vitrine_ajoutArticle') }}">Ajouter au panier</a> </div>
+        <article class="row article" >
+            <h3>{{ article.name }}</h3>
+            <img src="{{ asset('img/'~article.categorie.id~'/'~article.id~'.jpg') }}" height="200px" width="200px"/><br>
+            <section>
+                <h4>Description :</h4><br>
+                <span>{{ article.description }}</span>
+            </section>
+            <a class="btn btn-default" href="{{ path('sil14_vitrine_ajoutArticle', {'id' :article.id}) }}">Ajouter au panier</a>
+        </article>
 
     {% endfor %}
 
