@@ -1,0 +1,13 @@
+{% extends"layout.html.twig" %}
+
+{% block content %}
+    Bienvenue sur le site de e-commerce !
+
+    <ul>
+    {% for article in panier.contenu %}
+        <li> {{ article }} </li>
+    {% endfor %}
+    </ul>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+sil14\VitrineBundle\Entity\Lignecommande:
+
+        type: entity
+        table: Lignecommande
+        id :
+                commande:
+                        associationKey: true
+                article:
+                        associationKey: true
+
+        fields:
+
+                quantite:
+                        type: integer
+
+                price:
+                        type: decimal
+                        scale: 2
+
+        manyToOne:
+                commande:
+                        targetEntity: Commande
+                        inversedBy: ligneCommandes
+                        joinColumn:
+                                name: commande_id
+                                referencedColumnName: id
+
+                article:
+                        targetEntity: Article
+                        inverdesBy: ligneArticles
+                        joinColumn:
+                                name: article_id
+                                referencedColumnName: id
+
+

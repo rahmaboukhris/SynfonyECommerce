@@ -1,0 +1,12 @@
+{% extends"layout.html.twig" %}
+
+{% block content %}
+    Voici toutes les articles de la catégorie {{ categorie }} :
+
+    {% for article in articles %}
+
+        <div>{{ article.name }} <a class="btn btn-default" href="{{ path('sil14_vitrine_ajoutArticle') }}">Ajouter au panier</a> </div>
+
+    {% endfor %}
+
+{% endblock %}

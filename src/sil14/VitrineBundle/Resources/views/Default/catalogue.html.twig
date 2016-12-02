@@ -1,0 +1,12 @@
+{% extends"layout.html.twig" %}
+
+{% block content %}
+    Voici toutes les categories :
+
+    {% for cat in categorie %}
+
+        <div>{{ cat.intitule }}</div>
+
+    {% endfor %}
+
+{% endblock %}

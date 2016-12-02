@@ -1,3 +1,26 @@
 sil14_vitrine_homepage:
-    path:     /
-    defaults: { _controller: sil14VitrineBundle:Default:index }
+    path:     /accueil/{name}
+    defaults: { _controller: sil14VitrineBundle:Default:index, name: visiteur }
+
+sil14_vitrine_mentionslegales:
+    path:     /mentions
+    defaults: { _controller: sil14VitrineBundle:Default:mentions }
+
+sil14_vitrine_catalogue:
+    path:     /catalogue
+    defaults: { _controller: sil14VitrineBundle:Default:catalogue }
+
+sil14_vitrine_articleParCategorie:
+    path:     /articlesParCategorie/{id}
+    defaults: { _controller: sil14VitrineBundle:Default:articlesParCategorie, id: 1 }
+
+sil14_vitrine_contenuPanier:
+    path:     /contenuPanier
+    defaults: { _controller: sil14VitrineBundle:Panier:contenuPanier }
+
+sil14_vitrine_ajoutArticle:
+    path:     /ajoutArticle/{id}/{qte}
+    defaults: { _controller: sil14VitrineBundle:Panier:ajoutArticle, id: 1, qte: 1 }
+
+
+

@@ -1,0 +1,31 @@
+<html>
+
+<link rel="stylesheet" href="{{ asset('bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{{ asset('bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+
+{% block navbar %}
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ path('sil14_vitrine_homepage') }}">Accueil</a></li>
+                <li><a href="{{ path('sil14_vitrine_mentionslegales') }}">Mentions légales</a></li>
+                <li><a href="{{ path('sil14_vitrine_catalogue') }}">Catalogue</a></li>
+                <li><a href="{{ path('sil14_vitrine_articleParCategorie') }}">Article par catégorie</a></li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock%}
+
+<div class="symfony-content">
+    {% block content %}
+    {% endblock%}
+</div>
+
+
+</html>
