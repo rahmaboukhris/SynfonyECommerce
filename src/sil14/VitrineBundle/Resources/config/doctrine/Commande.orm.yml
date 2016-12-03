@@ -14,12 +14,8 @@ sil14\VitrineBundle\Entity\Commande:
                 etat:
                         type: boolean
 
-        oneToOne:
                 client:
-                        targetEntity: Client
-                        joinColumn:
-                                name: client_id
-                                referencedColumnName: id
+                        type: integer
 
         oneToMany:
                 ligneCommandes:

@@ -10,7 +10,9 @@
             <img src="{{ asset('img/'~article.categorie.id~'/'~article.id~'.jpg') }}" height="200px" width="200px"/><br>
             <section>
                 <h4>Description :</h4><br>
-                <span>{{ article.description }}</span>
+                <span>{{ article.description }}</span><br>
+                <span>Stock : {{ article.stock }}</span><br>
+                <span>Prix : {{ article.price }} €</span>
             </section>
             <a class="btn btn-default" href="{{ path('sil14_vitrine_ajoutArticle', {'id' :article.id}) }}">Ajouter au panier</a>
         </article>

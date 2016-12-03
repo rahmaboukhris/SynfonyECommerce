@@ -25,7 +25,7 @@ class Commande
     private $etat;
 
     /**
-     * @var \sil14\VitrineBundle\Entity\Client
+     * @var integer
      */
     private $client;
 
@@ -101,10 +101,10 @@ class Commande
     /**
      * Set client
      *
-     * @param \sil14\VitrineBundle\Entity\Client $client
+     * @param integer $client
      * @return Commande
      */
-    public function setClient(\sil14\VitrineBundle\Entity\Client $client = null)
+    public function setClient($client)
     {
         $this->client = $client;
 
@@ -114,7 +114,7 @@ class Commande
     /**
      * Get client
      *
-     * @return \sil14\VitrineBundle\Entity\Client 
+     * @return integer 
      */
     public function getClient()
     {

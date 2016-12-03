@@ -56,6 +56,25 @@ class PanierController extends Controller
 
     }
 
+    public function plusVendusAction($max=3){
+
+        $em=$this->getDoctrine()->getManager();
+
+        $query = $em->createQuery('SELECT IDENTITY(art.article) AS id FROM sil14VitrineBundle:LigneCommande art GROUP BY art.article ')->setMaxResults($max);
+        $result=$query->getResult();
+
+        $tabArticle=[];
+        $i=0;
+        foreach ($result as $value){
+            $tabArticle[$i]=$this->getArticle($value['id']);
+            $i+=1;
+
+        }
+
+        return $this->render('@sil14Vitrine/Default/plusVendusLayout.html.twig',array('tabArticle' => $tabArticle));
+
+    }
+
     /**
      * Get Panier
      *

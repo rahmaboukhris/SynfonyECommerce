@@ -1,0 +1,7 @@
+<h3>Articles les plus vendus :</h3>
+
+<ul>
+    {% for article in tabArticle  %}
+        <li> {{ article.name }}<br> <img src="{{ asset('img/'~article.categorie.id~'/'~article.id~'.jpg') }}" height="100px" width="100px"/> </li>
+    {% endfor %}
+</ul>

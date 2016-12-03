@@ -25,7 +25,7 @@ class Panier
     }
     public function ajoutArticle ($articleId, $qte = 1) {
 
-        if(isset($this->contenu[$articleId])){
+        if(!isset($this->contenu[$articleId])){
             $this->contenu[$articleId]=$qte;
         }
         // ajoute l'article $articleId au contenu, en quantité $qte
