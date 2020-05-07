@@ -13,6 +13,7 @@ class Article
      * @var integer
      */
     private $id;
+    private $id;
 
     /**
      * @var string
