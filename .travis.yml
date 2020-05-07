@@ -1,0 +1,15 @@
+name: sonarqube
+language: php
+php:
+  - '5.4'
+  - '5.6'
+  - '7.0'
+  - hhvm # on Trusty only
+  - nightly
+before_install:
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip 
+unzip sonar-scanner-cli-4.2.0.1873-linux.zip 
+rm sonar-scanner-cli-4.2.0.1873-linux.zip 
+mv sonar-scanner-4.2.0.1873-linux sonar-scanner 
+script:
+sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=GithubProject -Dsonar.host.url=http://sonarqube.acoba.com -Dsonar.login=ff4f5964d46d900d84a0a108683f93e5207bb0a5
