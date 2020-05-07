@@ -1,6 +1,6 @@
 name: sonarqube
 language: php
-php:
+ph
   - '5.4'
   - '5.6'
   - '7.0'
